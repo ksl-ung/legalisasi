@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -56,10 +57,15 @@ Route::group(['middleware' => 'auth'], function () {
   });
 });
 
+Route::get('/artisan/fresh', function () {
+  Artisan::call('migrate:fresh');
+});
+
+Route::get('/artisan/seed', function () {
+  Artisan::call('db:seed');
+});
+
 Route::get('/run/{command}', function ($command) {
-  exec($command, $output);
-  // return implode('', array_map(function ($e) {
-  //   return "<pre>$e</pre>";
-  // }, $output));
+  exec('cd ../laravel/ && ' . $command, $output);
   return "<pre>" . implode('<br>', $output) . "</pre>";
 });
