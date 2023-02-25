@@ -1,5 +1,5 @@
 @extends('dashboard.layouts.home_layouts')
-@section('title', 'Legalisasi')
+@section('title', 'Sudah Kirim Bukti')
 {{-- @section('data', 'active') --}}
 @section('ada', 'active')
 @section('open', 'menu-open')
@@ -41,7 +41,7 @@
                                     <td>{{ $value->jenis_dokumen }}
                                     </td>
                                     <td>{{ $value->pengambilan }}</td>
-                                    <td>Rp. {{ $value->jumlah_bayar }}</td>
+                                    <td>Rp. {{ number_format($value->jumlah_bayar) }}</td>
                                     <td class="text-center"><button type="button" data-toggle="modal"
                                             data-target="#exampleModal{{ $value->id }}"
                                             class="btn-sm btn btn-primary">Detail</button>
@@ -110,11 +110,7 @@
                                                     <h5>{{ $value->jenis_dokumen }}</h5>
 
                                                 </div>
-                                                <div class="form-group">
-                                                    <label>Bahasa :</label>
-                                                    <h5>{{ $value->bahasa }}</h5>
 
-                                                </div>
                                                 <div class="form-group">
                                                     <label>Jumlah :</label>
                                                     <h5>{{ $value->jumlah }}</h5>
@@ -141,13 +137,17 @@
 
                                                 <div class="form-group">
                                                     <label for="biaya">Biaya Legalisasi :</label>
-                                                    <h5>Rp. {{ $value->jumlah_bayar }}</h5>
+                                                    <h5>Rp. {{ number_format($value->jumlah_bayar) }}</h5>
 
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label for="textarea">Catatan :</label>
-                                                    <h5>{{ $value->catatan }}</h5>
+                                                    @if ($value->catatan != null || $value->catatan != '')
+                                                        <h5>{{ $value->catatan }}</h5>
+                                                    @else
+                                                        <h5>-</h5>
+                                                    @endif
 
                                                 </div>
                                             </div>

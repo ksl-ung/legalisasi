@@ -21,7 +21,7 @@ class UserController extends Controller
 
   public function legalisasi_user()
   {
-    $data = Legalisasi::where('nim_mahasiswa', Auth::user()->nim)->get();
+    $data = Legalisasi::where('nim_mahasiswa', Auth::user()->nim)->orderBy('is_upload', 'ASC')->orderBy('is_confirm', 'ASC')->get();
     $ijazah = Harga::all();
     $alamat = Alamat::all();
     return view('dashboard.user.legalisasi_user', compact(['data']))->with([

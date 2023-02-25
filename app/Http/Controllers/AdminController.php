@@ -30,14 +30,14 @@ class AdminController extends Controller
 
     public function legalisasi()
     {
-        $data = Legalisasi::where('is_upload', 1)->get();
+        $data = Legalisasi::where('is_upload', 1)->orderBy('is_confirm', 'ASC')->get();
         return view('dashboard.admin.legalisasi_view', compact(['data']))->with([
             'user' => Auth::user(),
         ]);
     }
     public function legalisasi_nbukti()
     {
-        $data = Legalisasi::where('is_upload', 0)->get();
+        $data = Legalisasi::where('is_upload', 0)->orderBy('created_at', 'DESC')->get();
         return view('dashboard.admin.legalisasi_BBukti', compact(['data']))->with([
             'user' => Auth::user(),
         ]);

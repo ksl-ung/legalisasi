@@ -18,7 +18,8 @@
         <div class="overlay-container-top">
             <div class="text-top">
                 <span class="head-h1">Selamat Datang</span>
-                <span class="head-res">di halaman utama legalisasi online Universitas Negeri Gorontalo. <br> Buat
+                <span class="head-res">di halaman utama legalisasi online Fakultas Teknik, Universitas Negeri Gorontalo.
+                    <br> Buat
                     Legalisasi Online
                     untuk berkas anda.</span>
             </div>
@@ -36,7 +37,8 @@
             <div class="overlay-kiri">
                 <div class="overlay-panel overlay-left">
                     <h1>Selamat Datang</h1>
-                    <p>di halaman utama legalisasi online Universitas Negeri Gorontalo. <br> Buat Legalisasi Online
+                    <p>di halaman utama legalisasi online Fakultas Teknik, Universitas Negeri Gorontalo. <br> Buat
+                        Legalisasi Online
                         untuk berkas anda.</p>
 
                 </div>
@@ -44,7 +46,8 @@
                     <strong>Copyright &copy
                         <script>
                             document.write(new Date().getFullYear())
-                        </script> <a href="#" class="univ">Universitas Negeri Gorontalo</a>
+                        </script> <a href="#" class="univ">Fakultas Teknik, Universitas Negeri
+                            Gorontalo</a>
                     </strong>
                 </div>
             </div>
