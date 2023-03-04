@@ -33,11 +33,11 @@ class UserController extends Controller
   public function tambah_legalisasi_user()
   {
     $ijazah = Harga::where('id', 1)->first();
-    $khs = Harga::where('id', 2)->first();
+    $transkrip_nilai = Harga::where('id', 2)->first();
     return view('dashboard.user.tambah_legalisasi')->with([
       'user' => Auth::user(),
       'ijazah' => $ijazah,
-      'khs' => $khs,
+      'transkrip_nilai' => $transkrip_nilai,
     ]);
   }
 

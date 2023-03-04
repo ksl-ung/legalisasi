@@ -21,7 +21,7 @@ class HargaSeeder extends Seeder
 
             ],
             [
-                'nama_berkas' => 'Khs',
+                'nama_berkas' => 'Transkrip Nilai',
                 'harga_perlembar' => 6000,
             ],
 

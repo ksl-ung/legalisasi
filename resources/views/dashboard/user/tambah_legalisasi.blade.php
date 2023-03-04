@@ -62,7 +62,8 @@
                                     <option value="" selected disabled>silahkan pilih</option>
                                     <option value="Ijazah" @if (old('berkas') == 'Ijazah') {{ 'selected' }} @endif>
                                         Ijazah</option>
-                                    <option value="Khs" @if (old('berkas') == 'Khs') {{ 'selected' }} @endif>Khs
+                                    <option value="Transkrip Nilai"
+                                        @if (old('berkas') == 'Transkrip Nilai') {{ 'selected' }} @endif>Transkrip Nilai
                                     </option>
                                 </select>
                                 @error('berkas')
@@ -257,7 +258,8 @@
                                             document.getElementsByName('biaya')[0].value = 0
                                             document.getElementsByName('jumlah')[0].value = 0
                                         } else {
-                                            document.getElementsByName('price')[0].value = {{ $khs->harga_perlembar }}
+                                            document.getElementsByName('price')[0].value =
+                                                {{ $transkrip_nilai->harga_perlembar }}
                                             document.getElementsByName('biaya')[0].value = 0
                                             document.getElementsByName('jumlah')[0].value = 0
                                         }
