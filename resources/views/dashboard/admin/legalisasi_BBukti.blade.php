@@ -73,7 +73,7 @@
                                             <div class="modal-body text-center">
                                                 <div class="form-group">
                                                     <label>Berkas :</label>
-                                                    <form action="data/show" method="POST">
+                                                    <form action="data/lihat" target="__BLANK" method="POST">
                                                         @csrf
                                                         @method('get')
                                                         <input type="text" name="urlbukti"

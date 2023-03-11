@@ -76,7 +76,8 @@ class UserController extends Controller
     );
 
     if ($request->hasFile('files')) {
-      $path = $request->file('files')->store('uploads');
+      $custom_file_name = $nama . '-' . $request->file('files')->getClientOriginalName();
+      $path = $request->file('files')->storeAs('uploads', $custom_file_name);
     } else {
       $path = '';
     }
@@ -103,6 +104,7 @@ class UserController extends Controller
   public function upload_konfirmasi(Request $request)
   {
     $id = $request->id;
+    $nama = $request->nama;
 
     $request->validate(
       [
@@ -117,7 +119,8 @@ class UserController extends Controller
     );
 
     if ($request->hasFile('bukti')) {
-      $path = $request->file('bukti')->store('uploads/konfirmasi');
+      $custom_file_name = $nama . '-' . $request->file('bukti')->getClientOriginalName();
+      $path = $request->file('bukti')->storeAs('uploads/konfirmasi', $custom_file_name);
     } else {
       $path = '';
     }
@@ -142,7 +145,22 @@ class UserController extends Controller
   public function lihat_bukti(Request $request)
   {
     $url = $request->urlbukti;
-    return '<img src="' . asset('storage/' . $url) . '" alt="">';
+    $pdf = public_path("storage/" . $url);
+    return response()->download($pdf);
+  }
+  public function lihat(Request $request)
+  {
+    $url = $request->urlbukti;
+    $format = pathinfo($url, PATHINFO_EXTENSION);
+    if ($format == 'pdf') {
+      $pdf = public_path("storage/" . $url);
+      return response()->download($pdf);
+    } else {
+      return view('dashboard.user.lihat_bukti')->with([
+        'url' => $url,
+        'format' => $format
+      ]);
+    }
   }
   public function lihat_profile(Request $request)
   {

@@ -48,7 +48,7 @@
                                     </td>
                                     <td class="text-center">
 
-                                        <form action="data/show" method="POST" target="_blank">
+                                        <form action="data/lihat" method="POST" target="_blank">
                                             @csrf
                                             @method('get')
                                             <input type="text" name="urlbukti" value="{{ $value->file_konfirmasi }}"
@@ -96,7 +96,7 @@
                                             <div class="modal-body text-center">
                                                 <div class="form-group">
                                                     <label>Berkas :</label>
-                                                    <form action="data/show" method="POST" target="__BLANK">
+                                                    <form action="data/lihat" method="POST" target="__BLANK">
                                                         @csrf
                                                         @method('get')
                                                         <input type="text" name="urlbukti"

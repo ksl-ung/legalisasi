@@ -33,7 +33,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('dashboard', [AdminController::class, 'index'])->name('dashboard');
     Route::get('data_bukti', [AdminController::class, 'legalisasi'])->name('data_bukti');
     Route::get('data_nbukti', [AdminController::class, 'legalisasi_nbukti'])->name('data_nbukti');
-    Route::get('data/show', [AdminController::class, 'lihat_bukti'])->name('data/show');
+    Route::get('data/download', [AdminController::class, 'lihat_bukti'])->name('data/download');
+    Route::get('data/lihat', [AdminController::class, 'lihat'])->name('data/lihat');
     Route::put('data/konfirmasi', [AdminController::class, 'update_konfirmasi'])->name('data/konfirmasi');
     Route::get('profile', [AdminController::class, 'lihat_profile'])->name('profile');
     Route::put('profile/update', [AdminController::class, 'update_profile'])->name('profile/update');
@@ -51,7 +52,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('tambah_legalisasi', [UserController::class, 'tambah_legalisasi_user'])->name('tambah_legalisasi');
     Route::post('tambah_legalisasi/simpan', [UserController::class, 'simpan'])->name('tambah_legalisasi/simpan');
     Route::put('legalisasi/upload', [UserController::class, 'upload_konfirmasi'])->name('legalisasi/upload');
-    Route::get('legalisasi/show', [UserController::class, 'lihat_bukti'])->name('legalisasi/show');
+    Route::get('legalisasi/download', [UserController::class, 'lihat_bukti'])->name('legalisasi/download');
+    Route::get('legalisasi/lihat', [UserController::class, 'lihat'])->name('legalisasi/lihat');
     Route::get('myprofile', [UserController::class, 'lihat_profile'])->name('myprofile');
     Route::put('myprofile/update', [UserController::class, 'update_profile'])->name('myprofile/update');
     Route::get('myprofile/hapus/{id}', [UserController::class, 'hapus_profile'])->name('myprofile/hapus/{id}');

@@ -67,6 +67,8 @@
                                                     @method('put')
                                                     <input type="text" name="id" value="{{ $value->id }}"
                                                         hidden>
+                                                    <input type="text" name="nama" value="{{ $user->name }}"
+                                                        hidden>
                                                     <div
                                                         class="form-group  @error('files')
                                                     is-invalid
@@ -96,7 +98,7 @@
                                             </button>
 
                                             <div class="collapse" id="collapseExample2{{ $value->id }}">
-                                                <form action="legalisasi/show" method="POST">
+                                                <form action="legalisasi/lihat" method="POST">
                                                     @csrf
                                                     @method('get')
                                                     <input type="text" name="urlbukti"
@@ -132,7 +134,7 @@
                                             <div class="modal-body text-center">
                                                 <div class="form-group">
                                                     <label>Berkas :</label>
-                                                    <form action="legalisasi/show" method="POST" target="__BLANK">
+                                                    <form action="legalisasi/lihat" method="POST" target="__BLANK">
                                                         @csrf
                                                         @method('get')
                                                         <input type="text" name="urlbukti"

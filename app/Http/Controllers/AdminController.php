@@ -46,8 +46,22 @@ class AdminController extends Controller
     public function lihat_bukti(Request $request)
     {
         $url = $request->urlbukti;
-
-        return '<img src="' . asset('storage/' . $url) . '" alt="">';
+        $pdf = public_path("storage/" . $url);
+        return response()->download($pdf);
+    }
+    public function lihat(Request $request)
+    {
+        $url = $request->urlbukti;
+        $format = pathinfo($url, PATHINFO_EXTENSION);
+        if ($format == 'pdf') {
+            $pdf = public_path("storage/" . $url);
+            return response()->download($pdf);
+        } else {
+            return view('dashboard.admin.lihat_bukti')->with([
+                'url' => $url,
+                'format' => $format
+            ]);
+        }
     }
 
     public function update_konfirmasi(Request $request)
