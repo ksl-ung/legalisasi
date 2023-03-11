@@ -47,7 +47,7 @@ class AdminController extends Controller
     {
         $url = $request->urlbukti;
 
-        return '<img src="' . asset('storage/' . $url) . '"  width="1000" height="1200" alt="">';
+        return '<img src="' . asset('storage/' . $url) . '" alt="">';
     }
 
     public function update_konfirmasi(Request $request)

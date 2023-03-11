@@ -142,7 +142,7 @@ class UserController extends Controller
   public function lihat_bukti(Request $request)
   {
     $url = $request->urlbukti;
-    return '<img src="' . asset('storage/' . $url) . '" width="1000" height="1200" alt="">';
+    return '<img src="' . asset('storage/' . $url) . '" alt="">';
   }
   public function lihat_profile(Request $request)
   {
