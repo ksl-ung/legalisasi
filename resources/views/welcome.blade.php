@@ -18,7 +18,7 @@
         <div class="overlay-container-top">
             <div class="text-top">
                 <span class="head-h1">Selamat Datang</span>
-                <span class="head-res">di halaman utama legalisasi online Fakultas Teknik, Universitas Negeri Gorontalo.
+                <span class="head-res">di halaman utama legalisasi online Fakultas Teknik, Universitas Negeri Gorontalo
                     <br> Buat
                     Legalisasi Online
                     untuk berkas anda.</span>
@@ -46,8 +46,7 @@
                     <strong>Copyright &copy
                         <script>
                             document.write(new Date().getFullYear())
-                        </script> <a href="#" class="univ">Fakultas Teknik, Universitas Negeri
-                            Gorontalo</a>
+                        </script> Fakultas Teknik, UNG
                     </strong>
                 </div>
             </div>
