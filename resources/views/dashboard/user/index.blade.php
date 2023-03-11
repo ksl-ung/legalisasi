@@ -5,7 +5,7 @@
 @section('content')
     <div class="content-header">
         <div class="container-fluid">
-            <h1>Selamat Datang {{ $user->name }}</h1>
+            <h1>Selamat Datang {{ $user->name }} di Halaman Legalisasi Fakultas Teknik</h1>
         </div>
     </div>
 
